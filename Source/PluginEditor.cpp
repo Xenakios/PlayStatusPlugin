@@ -27,12 +27,25 @@ PlayStatusPluginAudioProcessorEditor::~PlayStatusPluginAudioProcessorEditor()
 void PlayStatusPluginAudioProcessorEditor::paint (Graphics& g)
 {
 	const auto& info = processor.positionInfo;
+	String status;
 	Colour color{ Colours::black };
 	if (info.isPlaying)
+	{
 		color = Colours::green;
+		status = "PLAY";
+	}
 	if (info.isRecording)
+	{
 		color = Colours::red;
+		status = "RECORD";
+	}
 	g.fillAll(color);
+	if (status.isEmpty() == false)
+	{
+		g.setColour(Colours::white);
+		g.setFont(40.0);
+		g.drawText(status, 0, 0, getWidth(), getHeight(), Justification::centred);
+	}
 }
 
 void PlayStatusPluginAudioProcessorEditor::resized()
