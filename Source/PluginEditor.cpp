@@ -15,7 +15,8 @@
 PlayStatusPluginAudioProcessorEditor::PlayStatusPluginAudioProcessorEditor (PlayStatusPluginAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
-    setSize (400, 100);
+	plugfont = Font{ "Comic Sans MS",100.0, 0 };
+	setSize (400, 100);
 	startTimer(50);
 }
 
@@ -42,7 +43,7 @@ void PlayStatusPluginAudioProcessorEditor::paint (Graphics& g)
 	g.fillAll(color);
 	
 	g.setColour(Colours::white);
-	g.setFont(40.0);
+	g.setFont(plugfont);
 	g.drawText(status, 0, 0, getWidth(), getHeight(), Justification::centred);
 	
 }

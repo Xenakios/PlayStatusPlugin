@@ -79,16 +79,16 @@ int PlayStatusPluginAudioProcessor::getCurrentProgram()
     return 0;
 }
 
-void PlayStatusPluginAudioProcessor::setCurrentProgram (int index)
+void PlayStatusPluginAudioProcessor::setCurrentProgram (int)
 {
 }
 
-const String PlayStatusPluginAudioProcessor::getProgramName (int index)
+const String PlayStatusPluginAudioProcessor::getProgramName (int)
 {
     return {};
 }
 
-void PlayStatusPluginAudioProcessor::changeProgramName (int index, const String& newName)
+void PlayStatusPluginAudioProcessor::changeProgramName (int index, const String&)
 {
 }
 
