@@ -136,6 +136,7 @@ void PlayStatusPluginAudioProcessor::processBlock (AudioBuffer<float>& buffer, M
 	for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 	AudioPlayHead* ph = getPlayHead();
+	jassert(ph != nullptr); // plugin is useless in hosts which don't provide the playhead
 	if (ph)
 	{
 		ph->getCurrentPosition(positionInfo);
