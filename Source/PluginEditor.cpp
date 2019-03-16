@@ -15,8 +15,8 @@
 PlayStatusPluginAudioProcessorEditor::PlayStatusPluginAudioProcessorEditor (PlayStatusPluginAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
-	plugfont = Font{ "Comic Sans MS",100.0, 0 };
-	setSize (400, 100);
+	plugfont = Font{ "Comic Sans MS",100.0, 0 }; // 100 is size, 0 is style normal
+	setSize (500, 150);
 	startTimer(50);
 }
 
