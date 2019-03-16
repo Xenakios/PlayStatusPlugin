@@ -27,25 +27,24 @@ PlayStatusPluginAudioProcessorEditor::~PlayStatusPluginAudioProcessorEditor()
 void PlayStatusPluginAudioProcessorEditor::paint (Graphics& g)
 {
 	const auto& info = processor.positionInfo;
-	String status;
+	String status{ "STOPPED" };
 	Colour color{ Colours::black };
 	if (info.isPlaying)
 	{
 		color = Colours::green;
-		status = "PLAY";
+		status = "PLAYING";
 	}
 	if (info.isRecording)
 	{
 		color = Colours::red;
-		status = "RECORD";
+		status = "RECORDING";
 	}
 	g.fillAll(color);
-	if (status.isEmpty() == false)
-	{
-		g.setColour(Colours::white);
-		g.setFont(40.0);
-		g.drawText(status, 0, 0, getWidth(), getHeight(), Justification::centred);
-	}
+	
+	g.setColour(Colours::white);
+	g.setFont(40.0);
+	g.drawText(status, 0, 0, getWidth(), getHeight(), Justification::centred);
+	
 }
 
 void PlayStatusPluginAudioProcessorEditor::resized()
