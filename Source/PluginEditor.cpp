@@ -26,7 +26,7 @@ PlayStatusPluginAudioProcessorEditor::~PlayStatusPluginAudioProcessorEditor()
 //==============================================================================
 void PlayStatusPluginAudioProcessorEditor::paint (Graphics& g)
 {
-	AudioPlayHead::CurrentPositionInfo& info = processor.positionInfo;
+	const auto& info = processor.positionInfo;
 	Colour color{ Colours::black };
 	if (info.isPlaying)
 		color = Colours::green;
